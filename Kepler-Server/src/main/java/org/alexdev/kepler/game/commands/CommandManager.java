@@ -46,7 +46,7 @@ public class CommandManager {
         this.commands.put(new String[] { "setprice" }, new SetItemPriceCommand());
         this.commands.put(new String[] { "setconfig" }, new SetConfigCommand());
         this.commands.put(new String[] { "hotelalert" }, new HotelAlertCommand());
-        this.commands.put(new String[] { "ufos" }, new UfosCommand());
+        //this.commands.put(new String[] { "ufos" }, new UfosCommand());
         this.commands.put(new String[] { "talk" }, new TalkCommand());
         this.commands.put(new String[] { "infobus", "bus" }, new InfobusCommand());
 		this.commands.put(new String[] { "givecredits" }, new GiveCreditsCommand());

@@ -5,6 +5,7 @@ import org.alexdev.kepler.dao.mysql.RareDao;
 import org.alexdev.kepler.dao.mysql.SettingsDao;
 import org.alexdev.kepler.util.DateUtil;
 import org.alexdev.kepler.util.config.GameConfiguration;
+import org.mariadb.jdbc.internal.com.read.resultset.SelectResultSet;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -153,13 +154,18 @@ public class RareManager {
      * @return the amount of rareCost
      */
     public int getHandoutAmountInHours(int hours) {
-        TimeUnit unit = TimeUnit.valueOf(GameConfiguration.getInstance().getString("credits.scheduler.timeunit"));
-        long interval = unit.toMinutes(GameConfiguration.getInstance().getInteger("credits.scheduler.interval"));
+        if (Objects.equals(GameConfiguration.getInstance().getString("credits.scheduler.enabled"), "false")) {
+            return (int) GameConfiguration.getInstance().getInteger("credits.scheduler.amount");
+        }
+        else {
+            TimeUnit unit = TimeUnit.valueOf(GameConfiguration.getInstance().getString("credits.scheduler.timeunit"));
+            long interval = unit.toMinutes(GameConfiguration.getInstance().getInteger("credits.scheduler.interval"));
 
-        long minutesInHour = 60;
-        long minutes = minutesInHour / interval;
+            long minutesInHour = 60;
+            long minutes = minutesInHour / interval;
 
-        return (int) ((hours * minutes) * GameConfiguration.getInstance().getInteger("credits.scheduler.amount"));
+            return (int) ((hours * minutes) * GameConfiguration.getInstance().getInteger("credits.scheduler.amount"));
+        }
     }
 
     /**

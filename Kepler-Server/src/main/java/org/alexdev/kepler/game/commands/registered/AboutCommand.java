@@ -26,11 +26,12 @@ public class AboutCommand extends Command {
         player.send(new ALERT("Project Kepler - Habbo Hotel v14 emulation" +
                 "<br>" +
                 "<br>Current revision: " + Kepler.SERVER_VERSION +
+                "<br>Michelinus rev: "+Kepler.MICK_VERSION +
                 "<br>" +
                 "<br>Contributors:" +
                 "<br> - ThuGie, Webbanditten, Ascii, Sefhriloff, Copyright, Raptosaur, Hoshiko " + // Call for help
                 "<br>   Romuald, Glaceon, Nillus, Holo Team, Meth0d, office.boy, killerloader" +
-                "<br>   Alito, wackfx" +
+                "<br>   Alito, wackfx, Michelinus" +
                 "<br>" +
                 "<br>" +
                 "Made by Quackster from RaGEZONE"));

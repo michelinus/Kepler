@@ -56,6 +56,7 @@ public class Kepler {
     private static RconServer rconServer;
     private static Logger log;
     public static final String SERVER_VERSION = "v1.6";
+    public static final String MICK_VERSION = "v1.0";
 
     /**
      * Main call of Java application
@@ -81,11 +82,12 @@ public class Kepler {
                     "          |_|                ");
 
             log.info("Kepler - Habbo Hotel Emulation (revision " + SERVER_VERSION + ")");
+            log.info("Mick Revision " + MICK_VERSION + ")");
 
             if (!Storage.connect()) {
                 return;
             }
-            
+
             log.info("Setting up game");
             //log.info(REGISTER.createPassword("lol"));
 
@@ -227,7 +229,7 @@ public class Kepler {
 
             // TODO: all the managers
             ChatManager.getInstance().performChatSaving();
-            
+
             GameScheduler.getInstance().performItemSaving();
             GameScheduler.getInstance().performItemDeletion();
 
@@ -241,7 +243,7 @@ public class Kepler {
 
     /**
      * Returns the interface to the server handler
-     * 
+     *
      * @return {@link NettyServer} interface
      */
     public static NettyServer getServer() {

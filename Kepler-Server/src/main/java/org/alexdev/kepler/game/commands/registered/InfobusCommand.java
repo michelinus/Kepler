@@ -51,6 +51,7 @@ public class InfobusCommand extends Command {
             help.append(":infobus option add [text]").append("<br>");
             help.append(":infobus option remove [number]").append("<br>");
             help.append(":infobus status").append("<br>");
+            help.append(":infobus start").append("<br>");
             help.append(":infobus reset");
 
             player.send(new ALERT(help.toString()));
