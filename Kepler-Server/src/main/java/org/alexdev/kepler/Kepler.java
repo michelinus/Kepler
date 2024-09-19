@@ -56,7 +56,7 @@ public class Kepler {
     private static RconServer rconServer;
     private static Logger log;
     public static final String SERVER_VERSION = "v1.6";
-    public static final String MICK_VERSION = "v1.0";
+    public static final String MICK_VERSION = "v1.1";
 
     /**
      * Main call of Java application
