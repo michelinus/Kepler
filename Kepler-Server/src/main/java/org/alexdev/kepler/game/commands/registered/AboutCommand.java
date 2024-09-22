@@ -23,18 +23,17 @@ public class AboutCommand extends Command {
 
         Player player = (Player)entity;
 
-        player.send(new ALERT("Project Kepler - Habbo Hotel v14 emulation" +
+        player.send(new ALERT("Oculus Emu " + Kepler.OCULUS_VERSION +" - HH: v14" +
+                "<br>Based on Project Kepler rev. " + Kepler.SERVER_VERSION +
                 "<br>" +
-                "<br>Current revision: " + Kepler.SERVER_VERSION +
-                "<br>Michelinus rev: "+Kepler.MICK_VERSION +
+                "<br>Oculus contributors:" +
+                "<br> - Michelinus" +
                 "<br>" +
-                "<br>Contributors:" +
-                "<br> - ThuGie, Webbanditten, Ascii, Sefhriloff, Copyright, Raptosaur, Hoshiko " + // Call for help
-                "<br>   Romuald, Glaceon, Nillus, Holo Team, Meth0d, office.boy, killerloader" +
-                "<br>   Alito, wackfx, Michelinus" +
-                "<br>" +
-                "<br>" +
-                "Made by Quackster from RaGEZONE"));
+                "<br>Kepler contributors:" +
+                "<br> - Quackster, ThuGie, Webbanditten, Ascii, Sefhriloff, Copyright" + // Call for help
+                "<br> - Raptosaur, Hoshiko, Romuald, Glaceon, Nillus, Holo Team, Meth0d" +
+                "<br> - office.boy, killerloader, Alito, wackfx" +
+                "<br>" ));
     }
 
     @Override

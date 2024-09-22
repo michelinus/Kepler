@@ -29,7 +29,7 @@ public class CommandManager {
         this.commands.put(new String[] { "about", "info", "version" }, new AboutCommand());
         this.commands.put(new String[] { "givedrink"}, new GiveDrinkCommand());
         this.commands.put(new String[] { "sit" }, new SitCommand());
-        this.commands.put(new String[] { "uptime", "status" }, new UptimeCommand());
+        this.commands.put(new String[] { "uptime" }, new UptimeCommand());
         this.commands.put(new String[] { "poof", "update" }, new PoofCommand());
         this.commands.put(new String[] { "coords" }, new CoordsCommand());
         this.commands.put(new String[] { "pickall" }, new PickAllCommand());
@@ -50,7 +50,7 @@ public class CommandManager {
         this.commands.put(new String[] { "talk" }, new TalkCommand());
         this.commands.put(new String[] { "infobus", "bus" }, new InfobusCommand());
 		this.commands.put(new String[] { "givecredits" }, new GiveCreditsCommand());
-        this.commands.put(new String[] { "mem" }, new MemoryCommand());
+        this.commands.put(new String[] { "status", "mem" }, new MemoryCommand());
         // Add client-side commands to list
         this.commands.put(new String[] { "chooser" }, new ChooserCommand());
         this.commands.put(new String[] { "furni" }, new FurniCommand());

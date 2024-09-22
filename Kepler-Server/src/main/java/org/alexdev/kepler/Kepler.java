@@ -38,28 +38,24 @@ import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 
 public class Kepler {
 
+    public static final String SERVER_VERSION = "v1.6";
+    public static final String OCULUS_VERSION = "v1.2";
     private static long startupTime;
-
     private static String serverIP;
     private static int serverPort;
-
     private static String musServerIP;
     private static int musServerPort;
-
     private static String rconIP;
     private static int rconPort;
-
     private static boolean isShutdown;
-
     private static NettyServer server;
     private static MusServer musServer;
     private static RconServer rconServer;
     private static Logger log;
-    public static final String SERVER_VERSION = "v1.6";
-    public static final String MICK_VERSION = "v1.1";
 
     /**
      * Main call of Java application
+     *
      * @param args System arguments
      */
     public static void main(String[] args) {
@@ -74,22 +70,27 @@ public class Kepler {
             log = LoggerFactory.getLogger(Kepler.class);
             ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.ADVANCED);
 
-            System.out.println("  _  __          _           \n" +
-                    " | |/ /___ _ __ | | ___ _ __ \n" +
-                    " | ' // _ \\ '_ \\| |/ _ \\ '__|\n" +
-                    " | . \\  __/ |_) | |  __/ |   \n" +
-                    " |_|\\_\\___| .__/|_|\\___|_|   \n" +
-                    "          |_|                ");
+            System.out.println("\n" +
+                    " ▒█████   ▄████▄   █    ██  ██▓     █    ██   ██████ \n" +
+                    "▒██▒  ██▒▒██▀ ▀█   ██  ▓██▒▓██▒     ██  ▓██▒▒██    ▒ \n" +
+                    "▒██░  ██▒▒▓█    ▄ ▓██  ▒██░▒██░    ▓██  ▒██░░ ▓██▄   \n" +
+                    "▒██   ██░▒▓▓▄ ▄██▒▓▓█  ░██░▒██░    ▓▓█  ░██░  ▒   ██▒\n" +
+                    "░ ████▓▒░▒ ▓███▀ ░▒▒█████▓ ░██████▒▒▒█████▓ ▒██████▒▒\n" +
+                    "░ ▒░▒░▒░ ░ ░▒ ▒  ░░▒▓▒ ▒ ▒ ░ ▒░▓  ░░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░\n" +
+                    "  ░ ▒ ▒░   ░  ▒   ░░▒░ ░ ░ ░ ░ ▒  ░░░▒░ ░ ░ ░ ░▒  ░ ░\n" +
+                    "░ ░ ░ ▒  ░         ░░░ ░ ░   ░ ░    ░░░ ░ ░ ░  ░  ░  \n" +
+                    "    ░ ░  ░ ░         ░         ░  ░   ░           ░  \n" +
+                    "         ░\n" +
+                    " ");
 
-            log.info("Kepler - Habbo Hotel Emulation (revision " + SERVER_VERSION + ")");
-            log.info("Mick Revision " + MICK_VERSION + ")");
+            log.info("Oculus - HH Emu v.14 (revision " + OCULUS_VERSION + ")");
+            log.info("Based on Kepler (revision " + SERVER_VERSION + ")");
 
             if (!Storage.connect()) {
                 return;
             }
 
             log.info("Setting up game");
-            //log.info(REGISTER.createPassword("lol"));
 
             GameConfiguration.getInstance(new GameConfigWriter());
             WalkwaysManager.getInstance();
@@ -252,6 +253,7 @@ public class Kepler {
 
     /**
      * Gets the server IPv4 IP address it is currently (or attempting to) listen on
+     *
      * @return IP as string
      */
     public static String getServerIP() {
@@ -260,6 +262,7 @@ public class Kepler {
 
     /**
      * Gets the server port it is currently (or attempting to) listen on
+     *
      * @return string of IP
      */
     public static int getServerPort() {
@@ -268,6 +271,7 @@ public class Kepler {
 
     /**
      * Gets the rcon IPv4 IP address it is currently (or attempting to) listen on
+     *
      * @return IP as string
      */
     public static String getRconIP() {
@@ -276,6 +280,7 @@ public class Kepler {
 
     /**
      * Gets the rcon port it is currently (or attempting to) listen on
+     *
      * @return string of IP
      */
     public static int getRconPort() {
@@ -306,7 +311,7 @@ public class Kepler {
      * @return
      */
     public static Argon2PasswordEncoder getPasswordEncoder() {
-        var encoder =new Argon2PasswordEncoder(16, 32, 1, 65536, 2);
+        var encoder = new Argon2PasswordEncoder(16, 32, 1, 65536, 2);
         return encoder;
     }
 }
