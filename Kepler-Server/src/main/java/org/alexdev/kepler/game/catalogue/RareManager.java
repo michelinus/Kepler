@@ -156,7 +156,7 @@ public class RareManager {
     public int getHandoutAmountInHours(int hours) {
         //Verificare se il parametro rare.price.fixed è true
         if (Objects.equals(GameConfiguration.getInstance().getString("rare.price.fixed"), "true")) {
-            return (int) GameConfiguration.getInstance().getInteger("rare.price.fixed.amount");
+            return GameConfiguration.getInstance().getInteger("rare.price.fixed.amount");
         }
         else {
             TimeUnit unit = TimeUnit.valueOf(GameConfiguration.getInstance().getString("credits.scheduler.timeunit"));

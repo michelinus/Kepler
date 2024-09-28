@@ -81,10 +81,9 @@ public class Kepler {
                     "░ ░ ░ ▒  ░         ░░░ ░ ░   ░ ░    ░░░ ░ ░ ░  ░  ░  \n" +
                     "    ░ ░  ░ ░         ░         ░  ░   ░           ░  \n" +
                     "         ░\n" +
-                    " ");
-
-            log.info("Oculus - HH Emu v.14 (revision " + OCULUS_VERSION + ")");
-            log.info("Based on Kepler (revision " + SERVER_VERSION + ")");
+                    " \n" +
+                    "Oculus (rev. " + OCULUS_VERSION + ") - HH Emu v14 \n" +
+                    "Based on Kepler (rev. " + SERVER_VERSION + ")\n");
 
             if (!Storage.connect()) {
                 return;
